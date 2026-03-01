@@ -1,0 +1,125 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: #201d18;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: 'Literata', serif;
+}
+
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+body.compact-ui .admin-table th,
+body.compact-ui .admin-table td {
+  @apply py-2;
+}
+
+@layer components {
+  .glass-card {
+    @apply border border-border-subtle/70 bg-bg-secondary/35;
+  }
+
+  .stat-card {
+    @apply border-l-2 border-border-default/80 bg-transparent p-4 transition-colors duration-200 hover:border-border-default;
+  }
+
+  .admin-input {
+    @apply h-10 w-full border border-border-subtle bg-bg-elevated/80 px-3 text-sm text-text-primary outline-none transition-colors placeholder:text-text-muted focus:border-accent-blue;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center border border-[#c96c35] bg-[#d9763b] px-4 py-2 text-sm font-semibold text-black transition-colors duration-200 hover:bg-[#e68345] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center border border-border-default bg-bg-elevated/70 px-4 py-2 text-sm font-medium text-text-secondary transition-colors duration-200 hover:border-text-muted hover:text-text-primary disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center border border-[#8a3434] bg-[#381a1a] px-4 py-2 text-sm font-medium text-[#ff9d9d] transition-colors duration-200 hover:bg-[#4a2121] disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .admin-table {
+    @apply w-full border-collapse;
+  }
+
+  .admin-table thead {
+    @apply bg-bg-elevated;
+  }
+
+  .admin-table th {
+    @apply border-b border-border-subtle px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.12em] text-text-muted;
+  }
+
+  .admin-table td {
+    @apply border-b border-border-subtle px-4 py-3 text-sm text-text-secondary;
+  }
+
+  .admin-table tbody tr {
+    @apply transition-colors duration-150 hover:bg-bg-elevated/40;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-2 border border-transparent px-3 py-2 text-sm text-text-muted transition-colors hover:border-border-default hover:bg-bg-elevated hover:text-text-secondary;
+  }
+
+  .sidebar-link.active {
+    @apply border-border-default bg-bg-elevated text-text-primary;
+  }
+
+  .badge {
+    @apply inline-flex items-center border px-2 py-0.5 text-xs font-medium;
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #24201b 25%, #2f2a22 50%, #24201b 75%);
+    background-size: 200% 100%;
+    @apply animate-shimmer;
+  }
+
+  .spinner {
+    @apply h-5 w-5 animate-spin border-2 border-text-muted border-t-accent-amber;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4d443a #1a1713;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #4d443a;
+}
+
+*::-webkit-scrollbar-track {
+  background: #1a1713;
+}
+
+::selection {
+  background: rgba(217, 118, 59, 0.25);
+  color: #f5f7fc;
+}
